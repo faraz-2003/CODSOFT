@@ -22,8 +22,9 @@ vector<ToDo> add_task(vector<ToDo> tasks) {
     int n;
     cin >> n;
     printf("Enter task: ");
+    cin.ignore();  // Clear the newline character from the input buffer
     string w;
-    cin >> w;
+    getline(cin, w);  // Read the entire line including spaces
     ToDo t(n, w);
     tasks.push_back(t);
     printf("Task added successfully.\n");
@@ -87,7 +88,7 @@ int main() {
     bool flag = true;
     vector<ToDo> tasks;
     while (flag) {
-        printf("\nTO DO Application\n");
+        printf("\n________TO DO Application________\n");
         printf("1. Add a Task.\n");
         printf("2. Delete a Task.\n");
         printf("3. Mark a Task as Done.\n");
@@ -111,7 +112,7 @@ int main() {
                 break;
             case 5: 
                 flag = false;
-                printf("Exiting...\n");
+                printf("Exiting...Thank You!!!!\n");
                 break;
             default:
                 printf("Invalid choice.\n");
